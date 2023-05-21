@@ -1,32 +1,87 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IAB207 Assignment 3</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- page title and description shown in search engines -->
+    <title>Kcqze</title>
+    <meta name="description"
+        content="Welcome to KCQZE events where you can find all the latest events and make bookings." />
+
+    <!-- favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+
+    <!-- link bootstrap and other css files required -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link href="../styles/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-
-        <!-- Navbar -->
-        <nav>
+    <!-- header section containing nav -->
+    <header id="home-landing" class="m-0">
+        <!-- bootstrap navbar customised-->
+        <!-- the navbar is intentionally left to not collapse on smaller screens design decision made to avoid use of unnecessary js and using elements like input to achieve this would be semantically incorrect. Instead I just wrap the nav links as the screen gets smaller. -->
+        <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo-kcqze.png" alt="logo" loading="lazy" width="100" height="35" />
+                </a>
+                <div class="justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                <a class="nav-link" href="event-details.html">Events</a>
+              </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking-history.html">Bookings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="create-event.html">Create</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
-        {% block header %}
-        {% endblock %}
+        <section>
+            <video class="object-fit-cover vw-100 vh-100" autoplay loop muted preload="auto">
+                <source src="./img/bg-video.mp4" />
+            </video>
 
+            <div class="hero-text w-100">
+                <h1 class="fs-1 fw-bold text-uppercase lh-base h-50 mb-4">
+                    Welcome to <br />
+                    <span class="sub-text">KCQZEvents</span>
+                </h1>
+                <div class="row gap-3">
+                    <a class="btn my-btn btn-primary col-3 col-sm-1" href="#about">Find out more</a>
+                    <a class="btn my-btn col-3 col-sm-1" href="#events">See what's on</a>
+                </div>
+            </div>
+        </section>
     </header>
 
-    {% block content %}
-    {% endblock %}
+    <!-- main content of the page -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
-    <footer class="footer">
+    <!-- footer section -->
+    <footer>
+        <section class="footer-text h-25 bg-dark text-white py-4 text-center">
+            <p class="text-center">&copy; 2023 KCQZE Inc. All rights reserved.</p>
+        </section>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>
