@@ -1,8 +1,19 @@
-from flask import Blueprint
+# This file is responsible for handling the main
+# pages in our web application
+# M for model
+# V for views
+# C for controller
 
-bp = Blueprint('main', __name__)
+# But this is for V part of the MVC architecture
 
+from flask import Blueprint, render_template, request
+from flask import session
+from .models import Destination
 
-@bp.route('/')
+viewsbp = Blueprint('main', __name__)
+
+@viewsbp.route("/")
 def index():
-    return '<h1>Starter code for the assessment<h1>'
+	destinations = Destination.query.all()
+	return render_template('index.html', destinations = destinations)
+
