@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% import 'bootstrap4/form.html' as wtf %}
+
+{% block content %}
+  <main>
+    <div class="event-details-page-container g-4 bg-dark-subtle py-5">
+      <h1 class="fs-1 fw-bold text-uppercase lh-base pt-5 pb-4">
+        About
+        <br />
+        <span class="sub-text">The Event</span>
+      </h1>
+
+      <div class="event-details-container bg-dark text-white py-5 px-4">
+        <!-- bootstrap grid usage -->
+        <div class="row">
+          <div class="col-xl-6 col-lg-12 mb-4 justify-content-evenly">
+            <img src="./img/karnival.png" alt="Event Image" title="Event Image" class="img-fluid w-100 mb-3 rounded object-fit-fill object-fit-top" />
+          </div>
+
+          <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-evenly lh-lg mb-4">
+            <h2 class="fs-1 fw-bold">Karnival</h2>
+            <p class="mb-3">
+              Welcome to the ultimate hardstyle music festival! Get ready for an unforgettable night of mind-blowing beats, incredible energy, and an atmosphere that will leave you breathless.
+              <br />
+              <br />
+              Featuring an epic lineup of world-class DJs and producers, this festival is a celebration of hard dance music in all its glory. From the moment you step through the gates, you'll be immersed in a world of thumping kicks, screeching synths, and pounding bass that will keep you dancing all night long.
+              <br />
+              <br />
+              With multiple stages, state-of-the-art sound and light production, and a community of passionate and friendly hardstyle fans, this festival is an experience like no other. So come and join us for a night of pure energy and excitement you won't regret it!
+            </p>
+            <p class="mb-3">
+              <span class="fw-semibold">Artists Performing:</span> Check banner for details!
+            </p>
+            <p class="mb-3">
+              <span class="fw-semibold">Date:</span> December 12<sup>th</sup>
+              2023
+            </p>
+            <p class="mb-3">
+              <span class="fw-semibold">Duration:</span> 3:00pm - 11:00pm
+            </p>
+            <p class="mb-3">
+              <span class="fw-semibold">Price:</span> Starting at $75
+            </p>
+            <p class="mb-3">
+              <span class="fw-semibold">Location:</span> Flemington Racecourse, Melbourne
+            </p>
+            <form action="" method="" class="p-0">
+              <div class="form-group">
+                <label for="ticketType" class="mb-3">Book Ticket:</label>
+                <select class="form-control mb-3" id="ticketType" required>
+                  <option>General Admission $75</option>
+                  <option>VIP $150</option>
+                  <option disabled>Backstage Pass $300 SOLD OUT</option>
+                </select>
+                <label for="ticketAmount" class="mb-3">Quantity:</label>
+                <select class="form-control mb-3" id="ticketAmount" required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- bootstrap grid usage -->
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="mb-4 fs-3 fw-semibold">Refund Policy</h3>
+            <p class="lh-base">
+              Refunds will be granted only in the event of cancellation or rescheduling of the festival. If the festival is cancelled in its entirety, ticket holders will be refunded the face value of their ticket. If the festival is rescheduled, ticket holders will have the option to either use their ticket for the rescheduled date or receive a refund.
+              <br />
+              <br />
+              Refunds will not be granted for any other reason. All sales are final and non-transferable. In the event of a cancellation or rescheduling, ticket holders will be notified via the email address provided at the time of purchase.
+              <br />
+              <br />
+              We strongly recommend that all ticket holders purchase ticket insurance or consider purchasing refundable travel arrangements to protect against unforeseen circumstances. The festival is not responsible for any expenses incurred by ticket holders in connection with the festival, including but not limited to travel, lodging, or other expenses.
+              <br />
+              <br />
+              Thank you for your understanding and support of our festival. We look forward to seeing you there!
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- bootstrap grid usage -->
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="mb-4 fs-3 fw-semibold">Comments</h3>
+            <form action="" method="" class="p-0">
+              <div class="form-group">
+                <div>
+                  <img src="./img/anoncat.jpeg" class="mr-3 mb-2 rounded-circle" alt="Your User Image" title="Your User Image" height="64" width="64" />
+                  <h5 class="mt-0 fs-5 fw-medium mb-4">
+                    Anonymous Cat
+                    <small class="small-text">(Log in to comment as yourself!)</small>
+                  </h5>
+                </div>
+                <label for="comment" class="fw-normal">Leave a Comment:</label>
+                <textarea class="form-control bg-gray-600" id="comment" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Comment</button>
+            </form>
+            <hr />
+            <div class="media bg-dark-subtle p-4 rounded">
+              <img src="./img/anonpanda.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" />
+              <div class="media-body">
+                <h5 class="mt-0 fs-5 fw-medium mb-4">Anonymous Panda</h5>
+                <p class="mb-4">OMG, I can't wait for the festival! The lineup is insane, and I'm so excited to see my favorite artists perform live!</p>
+                <small class="date-text">Date Posted: 28/04/2023 10:20am</small>
+              </div>
+            </div>
+            <hr />
+            <div class="media bg-dark-subtle p-4 rounded">
+              <img src="./img/anonlion.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" />
+              <div class="media-body">
+                <h5 class="mt-0 fs-5 fw-medium mb-4">Anonymous Lion</h5>
+                <p class="mb-4">This is going to be the best weekend ever! I've been counting down the days to the festival, and I can't wait to dance my heart out with all the other fans.</p>
+                <small class="date-text">Date Posted: 27/04/2023 8:15pm</small>
+              </div>
+            </div>
+            <hr />
+            <div class="media bg-dark-subtle p-4 rounded">
+              <img src="./img/anonmonkey.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" />
+              <div class="media-body">
+                <h5 class="mt-0 fs-5 fw-medium mb-4">Anonymous Monkey</h5>
+                <p class="mb-4">I've been dreaming about this festival for months, and it's finally happening! I'm going to be in the front row for all my favorite artists, and I know I'm going to have the time of my life.</p>
+                <small class="date-text">Date Posted: 26/04/2023 3:43pm</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% import 'bootstrap4/form.html' as wtf %}
+
+{% block content %}
+  <main>
+    <div class="create-event-container bg-dark-subtle py-5">
+      <h1 class="fs-1 fw-bold text-uppercase lh-base py-5">
+        Create
+        <br />
+        <span class="sub-text">Your Event</span>
+      </h1>
+      <div>
+        <!-- boostrap grid usage -->
+        <!-- bootstrap form component customised -->
+        <div class="container row row-col">{{ wtf.render_form(form) }}</div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
