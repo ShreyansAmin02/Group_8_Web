@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileField, FileAllowed
-from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, DateTimeField, IntegerField
+from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, DateField, IntegerField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
@@ -13,9 +13,11 @@ class EventForm(FlaskForm):
         min=3, max=30)], render_kw={"placeholder": "Enter Event Title"})
     artistName = StringField('Artist Name(s)', validators=[InputRequired(), Length(
         min=3, max=30)], render_kw={"placeholder": "Enter Artist Name(s)"})
-    address = StringField('Artist Name(s)', validators=[InputRequired(), Length(
+    style = StringField('Style', validators=[InputRequired(), Length(
+        min=3, max=30)], render_kw={"placeholder": "Enter Style"})
+    address = StringField('Address', validators=[InputRequired(), Length(
         min=3)], render_kw={"placeholder": "Enter Address"})
-    dateTime = DateTimeField('Date and Time', validators=[InputRequired()])
+    dateTime = DateField('Date and Time', validators=[InputRequired()])
     image = FileField('Event Image',
                       validators=[FileRequired(message='Image cannot be empty'),
                                   FileAllowed(
@@ -23,10 +25,12 @@ class EventForm(FlaskForm):
                                   ])
     description = TextAreaField('Description',
                                 validators=[InputRequired(), Length(min=3, max=100)], render_kw={"placeholder": "Enter Description:  "})
-    tickets = IntegerField('Price', validators=[InputRequired()], render_kw={
+    tickets = IntegerField('Tickets', validators=[InputRequired()], render_kw={
         "placeholder": "Quantity of Tickets Available"})
     price = IntegerField('Price', validators=[InputRequired()], render_kw={
                          "placeholder": "Enter Price"})
+    contactDetails = TextAreaField('Description',
+                                   validators=[InputRequired(), Length(min=3, max=100)], render_kw={"placeholder": "Enter Contact Details:  "})
     submit = SubmitField("Create")
 
 # User login
