@@ -19,7 +19,7 @@
           </div>
 
           <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-evenly lh-lg mb-4">
-            <h2 class="fs-1 fw-bold">Karnival</h2>
+            <h2 class="fs-1 fw-bold">{{ event.eventTitle }}</h2>
             <p class="mb-3">
               Welcome to the ultimate hardstyle music festival! Get ready for an unforgettable night of mind-blowing beats, incredible energy, and an atmosphere that will leave you breathless.
               <br />
@@ -30,17 +30,17 @@
               With multiple stages, state-of-the-art sound and light production, and a community of passionate and friendly hardstyle fans, this festival is an experience like no other. So come and join us for a night of pure energy and excitement you won't regret it!
             </p>
             <p class="mb-3">
-              <span class="fw-semibold">Artists Performing:</span> Check banner for details!
+              <span class="fw-semibold">Artists Performing:</span> {{ event.artistName }}
             </p>
             <p class="mb-3">
-              <span class="fw-semibold">Date:</span> December 12<sup>th</sup>
+              <span class="fw-semibold">Date:</span> {{ event.date }}<sup>th</sup>
               2023
             </p>
             <p class="mb-3">
               <span class="fw-semibold">Duration:</span> 3:00pm - 11:00pm
             </p>
             <p class="mb-3">
-              <span class="fw-semibold">Price:</span> Starting at $75
+              <span class="fw-semibold">Price:</span> Starting at ${{ event.price }}
             </p>
             <p class="mb-3">
               <span class="fw-semibold">Location:</span> Flemington Racecourse, Melbourne
