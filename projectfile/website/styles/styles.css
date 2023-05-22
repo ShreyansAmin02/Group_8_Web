@@ -1,0 +1,453 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Element Styles */
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Bootstrap @@overrides */
+.row {
+    margin: 0;
+}
+
+.btn-success,
+.btn-danger,
+.btn-secondary,
+.btn-warning {
+    padding: 2px 10px;
+    font-size: 0.7rem;
+    top: 5%;
+    right: 5%;
+    border: 1px solid var(--bs-light);
+    color: var(--bs-light) !important;
+    opacity: 1 !important;
+}
+
+.navbar {
+    padding: 0 10%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--bs-light);
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #ff96f1;
+    transition: all ease-in-out 250ms;
+}
+
+.nav-link:focus,
+.active {
+    color: #ff96f1 !important;
+    border-bottom: 1px solid #ff96f1;
+}
+
+.btn-primary {
+    border: 1px solid var(--bs-light);
+    background-color: #ff96f1;
+    color: var(--bs-light) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    filter: brightness(85%);
+    border: 1px solid var(--bs-light) !important;
+    transition: ease-in-out 200ms;
+    background-color: #ff96f1 !important;
+}
+
+.bg-dark-subtle {
+    background-color: #31323f !important;
+}
+
+.events-section-container .card {
+    width: 80% !important;
+}
+
+@media (max-width: 820px) {
+    .events-section-container .card {
+        width: 100% !important;
+    }
+}
+
+/* 
+Typography
+================ 
+*/
+
+h1 {
+    color: var(--bs-light);
+}
+
+/*************************************/
+/*************************************/
+/********* MAIN LANDING PAGE *********/
+/*************************************/
+/*************************************/
+
+/* 
+Header Section
+================ 
+*/
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    padding: 0 10%;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 1em;
+}
+
+/* custom breakpoint because md too small and lg too big */
+@media (max-width: 520px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+/* 
+Home-Hero
+====================== 
+*/
+.sub-text {
+    color: #ff96f1;
+}
+
+/*
+About Section
+==============
+*/
+.about-section {
+    padding: 80px 0;
+}
+
+.about-section-container {
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+/*
+Event Section
+==============
+*/
+
+.events-section {
+    padding: 80px 0;
+}
+
+.events-section-container {
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+.card {
+    display: inline-block;
+    width: 18rem;
+    margin-bottom: 20px;
+    background-color: var(--bs-light);
+    border: 1px solid;
+    border-image: linear-gradient(45deg, darkblue, #ff96f1) 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-description {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-date {
+    font-size: 0.8rem;
+    color: var(--bs-gray-600);
+}
+
+/* 
+Contact Section
+===============
+*/
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-section-container {
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+form {
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ff96f1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bs-gray-600) !important;
+    color: var(--bs-light) !important;
+    border-color: #ff96f1 !important;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+    color: var(--bs-gray-400);
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* 
+Footer
+==============
+*/
+
+.footer-text {
+    line-height: 5rem;
+}
+
+/* 
+Custom Button
+==============
+ */
+
+.my-btn {
+    padding: 14px 0;
+    color: #ff96f1;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 20rem;
+    border: 1px solid var(--bs-light);
+}
+
+.my-btn:hover,
+.my-btn:focus {
+    background: #ff96f1;
+    color: var(--bs-light);
+    border: 1px solid var(--bs-light);
+}
+
+/*************************************/
+/*************************************/
+/******* EVENTS CREATION PAGE ********/
+/*************************************/
+/*************************************/
+.create-event-container {
+    padding: 0 10%;
+}
+
+.form-group label {
+    color: var(--bs-light);
+}
+
+.create-event-container .form-control {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bs-gray-600);
+    color: var(--bs-light);
+    border-color: #ff96f1;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.create-event-container .form-control:focus {
+    background-color: var(--bs-gray-600);
+    color: var(--bs-light);
+    border-color: #ff96f1;
+    box-shadow: none;
+}
+
+.create-event-container .form-control::placeholder {
+    color: var(--bs-gray-400);
+}
+
+input[type="date"]:hover {
+    cursor: pointer;
+}
+
+.create-event-btn {
+    margin-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+/* custom breakpoint because md too small and lg too big */
+@media (max-width: 370px) {
+    .create-event-container {
+        padding-top: 125px !important;
+    }
+}
+
+@media (max-width: 275px) {
+    .create-event-container {
+        padding-top: 175px !important;
+    }
+}
+
+@media (max-width: 220px) {
+    .create-event-container {
+        padding-top: 225px !important;
+    }
+}
+
+/*************************************/
+/*************************************/
+/******* EVENTS BOOKING PAGE *********/
+/*************************************/
+/*************************************/
+
+.event-details-page-container {
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+.event-details-container {
+    border-radius: 10px;
+}
+
+sup {
+    font-size: 0.8rem;
+}
+
+.media {
+    margin-top: 20px;
+    border: 1px solid #ff96f1;
+}
+
+.small-text {
+    font-size: 0.9rem;
+}
+
+.date-text {
+    font-size: 0.7rem;
+    color: var(--bs-gray-400);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--bs-light);
+    margin: 30px 0;
+}
+
+/* custom breakpoint because md too small and lg too big */
+@media (max-width: 370px) {
+    .event-details-page-container {
+        padding-top: 125px !important;
+    }
+}
+
+@media (max-width: 275px) {
+    .event-details-page-container {
+        padding-top: 175px !important;
+    }
+}
+
+@media (max-width: 220px) {
+    .event-details-page-container {
+        padding-top: 225px !important;
+    }
+}
+
+/*************************************/
+/*************************************/
+/******* BOOKING DETAILS PAGE ********/
+/*************************************/
+/*************************************/
+
+/*
+Booking History Section
+========================
+*/
+.booking-history-container {
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+.booking-card img {
+    vertical-align: bottom !important;
+}
+
+/* custom breakpoint because md too small and lg too big */
+@media (max-width: 370px) {
+    .booking-history-container {
+        padding-top: 125px !important;
+    }
+}
+
+@media (max-width: 275px) {
+    .booking-history-container {
+        padding-top: 175px !important;
+    }
+}
+
+@media (max-width: 220px) {
+    .booking-history-container {
+        padding-top: 225px !important;
+    }
+}
