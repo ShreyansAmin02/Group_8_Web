@@ -29,7 +29,7 @@ def create():
     eventForm = EventForm()
     if eventForm.validate_on_submit():
         db_file_path = check_upload_file(eventForm)
-        event = Event(eventTitle=eventForm.title.data, style=eventForm.style.data, artistName=eventForm.artistName.data, address=eventForm.address.data, date_time=eventForm.dateTime.data, image=db_file_path,
+        event = Event(eventTitle=eventForm.title.data, style=eventForm.style.data, artistName=eventForm.artistName.data, address=eventForm.address.data, date=eventForm.date.data, image=db_file_path, startTime=eventForm.startTime.data, endTime=eventForm.endTime.data,
                       description=eventForm.description.data, tickets=eventForm.tickets.data,
                       price=eventForm.price.data, contactDetails=eventForm.contactDetails.data)
         db.session.add(event)

@@ -15,41 +15,34 @@
         <!-- bootstrap grid usage -->
         <div class="row">
           <div class="col-xl-6 col-lg-12 mb-4 justify-content-evenly">
-            <img src="./img/karnival.png" alt="Event Image" title="Event Image" class="img-fluid w-100 mb-3 rounded object-fit-fill object-fit-top" />
+            <img src={{event.image}} alt="Event Image" title="Event Image" class="img-fluid w-100 mb-3 rounded object-fit-fill object-fit-top" />
           </div>
 
           <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-evenly lh-lg mb-4">
             <h2 class="fs-1 fw-bold">{{ event.eventTitle }}</h2>
             <p class="mb-3">
-              Welcome to the ultimate hardstyle music festival! Get ready for an unforgettable night of mind-blowing beats, incredible energy, and an atmosphere that will leave you breathless.
-              <br />
-              <br />
-              Featuring an epic lineup of world-class DJs and producers, this festival is a celebration of hard dance music in all its glory. From the moment you step through the gates, you'll be immersed in a world of thumping kicks, screeching synths, and pounding bass that will keep you dancing all night long.
-              <br />
-              <br />
-              With multiple stages, state-of-the-art sound and light production, and a community of passionate and friendly hardstyle fans, this festival is an experience like no other. So come and join us for a night of pure energy and excitement you won't regret it!
+              {{event.description}}
             </p>
             <p class="mb-3">
               <span class="fw-semibold">Artists Performing:</span> {{ event.artistName }}
             </p>
             <p class="mb-3">
-              <span class="fw-semibold">Date:</span> {{ event.date }}<sup>th</sup>
-              2023
+              <span class="fw-semibold">Date:</span> {{ event.date.strftime('%d-%m-%Y') }}
             </p>
             <p class="mb-3">
-              <span class="fw-semibold">Duration:</span> 3:00pm - 11:00pm
+              <span class="fw-semibold">Duration:</span> {{event.startTime.strftime('%H:%M')}} to {{event.endTime.strftime('%H:%M')}}
             </p>
             <p class="mb-3">
               <span class="fw-semibold">Price:</span> Starting at ${{ event.price }}
             </p>
             <p class="mb-3">
-              <span class="fw-semibold">Location:</span> Flemington Racecourse, Melbourne
+              <span class="fw-semibold">Location:</span> {{event.address}}
             </p>
             <form action="" method="" class="p-0">
               <div class="form-group">
                 <label for="ticketType" class="mb-3">Book Ticket:</label>
                 <select class="form-control mb-3" id="ticketType" required>
-                  <option>General Admission $75</option>
+                  <option>General Admission ${{event.price}}</option>
                   <option>VIP $150</option>
                   <option disabled>Backstage Pass $300 SOLD OUT</option>
                 </select>
