@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileField, FileAllowed
-from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, DateField, IntegerField
+from wtforms.fields import TextAreaField, SubmitField, StringField, TimeField, PasswordField, DateField, IntegerField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 ALLOWED_FILE = {'PNG', 'JPG', 'png', 'jpg'}
@@ -17,7 +17,9 @@ class EventForm(FlaskForm):
         min=3, max=30)], render_kw={"placeholder": "Enter Style"})
     address = StringField('Address', validators=[InputRequired(), Length(
         min=3)], render_kw={"placeholder": "Enter Address"})
-    dateTime = DateField('Date and Time', validators=[InputRequired()])
+    date = DateField('Date', validators=[InputRequired()])
+    startTime = TimeField('Starts at', validators=[InputRequired()])
+    endTime = TimeField('Ends at', validators=[InputRequired()])
     image = FileField('Event Image',
                       validators=[FileRequired(message='Image cannot be empty'),
                                   FileAllowed(
@@ -29,7 +31,7 @@ class EventForm(FlaskForm):
         "placeholder": "Quantity of Tickets Available"})
     price = IntegerField('Price', validators=[InputRequired()], render_kw={
                          "placeholder": "Enter Price"})
-    contactDetails = TextAreaField('Description',
+    contactDetails = TextAreaField('Contact Details',
                                    validators=[InputRequired(), Length(min=3, max=100)], render_kw={"placeholder": "Enter Contact Details:  "})
     submit = SubmitField("Create")
 
