@@ -70,3 +70,12 @@ def logout():
 #  im just tessting this partt
 #  im just tessting this partt
 #  im just tessting this partt
+<<<<<<< HEAD
+=======
+
+
+
+# yes testing this too
+
+
+>>>>>>> 876162cfee8e7eaf9504bcb1f3be60cfd8aef91f
