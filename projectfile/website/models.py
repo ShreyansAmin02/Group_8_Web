@@ -20,14 +20,15 @@ class Event(db.Model):
     __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
     eventTitle = db.Column(db.String(80))
+    artistName = db.Column(db.String(80))
     style = db.Column(db.String(80))
     address = db.Column(db.String(80))
     date_time = db.Column(db.DateTime)
-    photo = db.Column(db.String(400))
+    image = db.Column(db.String(400))
     description = db.Column(db.String(400))
     tickets = db.Column(db.Integer)
     price = db.Column(db.Integer)
-    contactInfo = db.Column(db.String(200))
+    contactDetails = db.Column(db.String(200))
     # ... Create the Comments db.relationship
     # relation to call event.comments and comment.event
     comments = db.relationship('Comment', backref='event')
