@@ -8,12 +8,11 @@
 
 from flask import Blueprint, render_template, request
 from flask import session
-from .models import Destination
+from .models import Event
 
 viewsbp = Blueprint('main', __name__)
 
+
 @viewsbp.route("/")
 def index():
-	destinations = Destination.query.all()
-	return render_template('index.html', destinations = destinations)
-
+    return render_template('index.html')
