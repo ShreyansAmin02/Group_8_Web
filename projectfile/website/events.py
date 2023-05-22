@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, session, redirect, url_for
+from flask import Blueprint, render_template, request, session, redirect, url_for, flash
 from .models import Comment, Event
 from .forms import EventForm, CommentForm
 import os
@@ -35,6 +35,8 @@ def create():
         db.session.add(event)
         db.session.commit()
         return redirect(url_for('events.create'))
+
+    flash('Successfully Created Event!')
     return render_template('events/create.html', form=eventForm)
 
 
@@ -61,5 +63,4 @@ def comment(id):
             event=event_obj, user=current_user)
         db.session.add(comment)
         db.session.commit()
-    # this refers to the name at the top... dummy
     return redirect(url_for('event.show', id=id))
