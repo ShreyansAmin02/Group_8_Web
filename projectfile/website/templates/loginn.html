@@ -2,35 +2,7 @@
 {% import 'bootstrap4/form.html' as wtf %}
 
 {% block content %}
-  <body>
-    <!-- <section class="header"> -->
-    <!-- header section containing nav -->
-    <header id="home-landing" class="m-0">
-      <!-- bootstrap navbar customised -->
-      <!-- the navbar is intentionally left to not collapse on smaller screens design decision made to avoid use of unnecessary js and using elements like input to achieve this would be semantically incorrect. Instead I just wrap the nav links as the screen gets smaller. -->
-      <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="../static/image/logo-kcqze.png" alt="logo" loading="lazy" width="100" height="35" /></a>
-          <div class="justify-content-end" id="navbarNav">
-            <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <!--                                                                                                                <li class="nav-item">
-                <a class="nav-link" href="event-details.html">Events</a>
-              </li>                                                                                                                -->
-              <li class="nav-item">
-                <a class="nav-link" href="booking-history.html">Bookings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('events.create') }}">Create</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+  <div id="log_bod">
     <main class="filling">
       <div class="form-box login">
         <form action="#">
@@ -91,4 +63,8 @@
         </form>
       </div>
     </main>
+    <script src="../static/java/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </div>
 {% endblock %}

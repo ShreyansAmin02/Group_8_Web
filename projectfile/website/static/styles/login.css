@@ -1,10 +1,10 @@
-body {
+#log_bod {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: 
-    linear-gradient(rgba(156, 172, 236, 0.356), rgba(156, 172, 236, 0.356)), url(../image/crowd.png);
+    background-image:
+        linear-gradient(rgba(156, 172, 236, 0.356), rgba(156, 172, 236, 0.356)), url(../image/crowd.png);
     background-position: center;
     background-size: cover;
 }
@@ -18,14 +18,14 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.5));
     /* border-radius: 20px;
     backdrop-filter: blur(100px); */
-    
+
 /* } */
 
-main.filling {
+#log_bod main.filling {
     position: relative;
     width: 400px;
     height: 470px;
-    background-color:#fff5;
+    background-color: #fff5;
     overflow: hidden;
     box-shadow: 0 6.4px 12.8px rgb(0, 0, 0);
     backdrop-filter: blur(7px);
@@ -36,7 +36,7 @@ main.filling {
 }
 
 
-.filling.active {
+#log_bod .filling.active {
     height: 520px;
 
 }
@@ -44,18 +44,18 @@ main.filling {
 
 
 
-.filling .form-box {
+#log_bod .filling .form-box {
     width: 100%;
     padding: 20px;
 }
 
-.form-box h2 {
+#log_bod .form-box h2 {
     font-size: 2em;
     color: black;
     text-align: center;
 }
 
-.input-box {
+#log_bod .input-box {
     position: relative;
     width: 100%;
     height: 50px;
@@ -63,7 +63,7 @@ main.filling {
     margin: 30px 0;
 }
 
-.input-box label {
+#log_bod .input-box label {
     position: absolute;
     top: 50%;
     left: 5px;
@@ -76,7 +76,7 @@ main.filling {
 
 
 
-.input-box input {
+#log_bod .input-box input {
     width: 100%;
     height: 100%;
     font-size: 1em;
@@ -88,7 +88,7 @@ main.filling {
     padding: 0 1px 0;
 }
 
-.input-box .icon {
+#log_bod .input-box .icon {
     position: absolute;
     right: 8px;
     font-size: 1.2em;
@@ -97,13 +97,13 @@ main.filling {
 }
 
 
-.input-box input:focus~label,
-.input-box input:valid~label {
-    top:-5px
+#log_bod .input-box input:focus~label,
+#log_bod .input-box input:valid~label {
+    top: -5px
 }
 
 
-.remember-forgot {
+#log_bod .remember-forgot {
     font-size: .9em;
     color: black;
     /* font-weight: 500px; */
@@ -112,24 +112,24 @@ main.filling {
     justify-content: space-between;
 }
 
-.remember-forgot label input {
+#log_bod .remember-forgot label input {
     margin-right: 3px;
     accent-color: black;
 }
 
 
-.remember-forgot a {
+#log_bod .remember-forgot a {
     color: black;
     text-decoration: none;
 
 }
 
 
-.remember-forgot a:hover {
+#log_bod .remember-forgot a:hover {
     text-decoration: underline;
 }
 
-.btn {
+#log_bod .btn {
     height: 45px;
     width: 100%;
     border: none;
@@ -140,15 +140,15 @@ main.filling {
     font-size: 1em;
     font-weight: 500;
     margin-top: 40px;
-    /* padding: -20%; */   
+    /* padding: -20%; */
 }
 
-.btn:hover {
+#log_bod .btn:hover {
     background-color: rgb(83, 37, 85);
     color: azure;
 }
 
-.login-register {
+#log_bod .login-register {
     color: rgb(32, 32, 32);
     text-align: center;
     font-size: .9em;
@@ -156,13 +156,13 @@ main.filling {
     margin: 25px 0 10px;
 }
 
-.login-register p a {
+#log_bod .login-register p a {
     color: rgb(32, 32, 32);
     text-decoration: none;
     font-weight: 500;
 }
 
-.login-register p a:hover {
+#log_bod .login-register p a:hover {
     text-decoration: underline;
 
 }
@@ -171,27 +171,27 @@ main.filling {
 
 /* Registeration css */
 
-.filling .form-box.login {
+#log_bod .filling .form-box.login {
     transition: transform .18s ease;
     transform: translateX(0);
 }
 
 
-.filling.active .form-box.login {
+#log_bod .filling.active .form-box.login {
     transform: translateX(-400px);
     transition: none;
 }
 
 
-.filling .form-box.register {
+#log_bod .filling .form-box.register {
     position: absolute;
     transition: none;
     transform: translateX(400px);
-    
+
 }
 
 
-.filling.active .form-box.register {
+#log_bod .filling.active .form-box.register {
     transition: transform .18s ease;
     transform: translateX(0);
 }
