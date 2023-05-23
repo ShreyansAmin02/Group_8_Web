@@ -26,7 +26,7 @@ class EventForm(FlaskForm):
                                       ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')
                                   ])
     description = TextAreaField('Description',
-                                validators=[InputRequired(), Length(min=3, max=100)], render_kw={"placeholder": "Enter Description:  "})
+                                validators=[InputRequired(), Length(min=3)], render_kw={"placeholder": "Enter Description:  "})
     tickets = IntegerField('Tickets', validators=[InputRequired()], render_kw={
         "placeholder": "Quantity of Tickets Available"})
     price = IntegerField('Price', validators=[InputRequired()], render_kw={

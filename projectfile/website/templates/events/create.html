@@ -7,13 +7,12 @@
     <div class="create-event-container bg-dark-subtle py-5">
       <h1 class="fs-1 fw-bold text-uppercase lh-base py-5">
         Create
-        <br />
         <span class="sub-text">Your Event</span>
       </h1>
       <div>
-        <!-- boostrap grid usage -->
-        <!-- bootstrap form component customised -->
-        <div class="container row row-col">{{ wtf.render_form(form) }}</div>
+        <form action="" method="" class="create-event-form bg-dark row row-col">
+          <div class="container row row-col">{{ wtf.render_form(form) }}</div>
+        </form>
       </div>
     </div>
   </main>

@@ -333,6 +333,10 @@ input[type="date"]:hover {
     cursor: pointer;
 }
 
+input[type="file"] {
+    color: var(--bs-light);
+}
+
 .create-event-btn {
     margin-left: calc(var(--bs-gutter-x) * 0.5);
 }
