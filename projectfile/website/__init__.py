@@ -32,8 +32,8 @@ def create_app():
         return User.query.get(int(user_id))
 
     # add blue prints
-    # app.register_blueprint(views.viewsbp)
-    # app.register_blueprint(auth.authbp)
+    app.register_blueprint(views.viewsbp)
+    app.register_blueprint(auth.authbp)
     app.register_blueprint(events.eventsbp)
     app.secret_key = 'IAB207'
     return app
