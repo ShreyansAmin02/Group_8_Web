@@ -42,4 +42,5 @@ def create_app():
 @app.errorhandler(404)
 # inbuilt function which takes error as parameter
 def not_found(e):
-    return render_template("error.html")
+    message = "Page was not found"
+    return render_template("error.html", errorMessage=message)
