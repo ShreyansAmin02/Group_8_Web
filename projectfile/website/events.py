@@ -15,11 +15,15 @@ eventsbp = Blueprint('events', __name__, url_prefix='/events')
 # this will eventually be used to determine what destination is used
 @eventsbp.route("/<id>", methods=['GET', 'POST'])
 def show(id):  # not done yet
-    event = Event.query.filter_by(id=id).first()
-    cmtForm = CommentForm()
-    if id == None:
-        id = "events/create"
-    return render_template("events/details.html", event=event, form=cmtForm)
+    try:
+        event = Event.query.filter_by(id=id).first()
+        cmtForm = CommentForm()
+        if id == None:
+            id = "events/create"
+        return render_template("events/details.html", event=event, form=cmtForm)
+    except:
+        message = "Event was not found"
+        return render_template("error.html", errorMessage=message)
 
 
 @eventsbp.route("/create", methods=['GET', 'POST'])
