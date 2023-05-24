@@ -13,6 +13,7 @@ authbp = Blueprint('auth', __name__)
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
+        
         uname = form.user_name.data
         new_user = User(
             name=uname,
@@ -29,7 +30,8 @@ def register():
         db.session.commit()
         flash('successfully registered user. Please login.')
         return redirect(url_for('auth.login'))
-    return render_template('login.html', form=form)
+    return render_template('loginn.html', form=form, heading='Register')
+
 
 
 @authbp.route('/login', methods=['GET', 'POST'])
@@ -37,6 +39,7 @@ def login():
     login_form = LoginForm()
     error = None
     if (login_form.validate_on_submit() == True):
+        print("on line 42")
         # get the username and password from the database
         user_name = login_form.user_name.data
         password = login_form.password.data
