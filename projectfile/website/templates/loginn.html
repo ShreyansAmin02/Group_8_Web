@@ -2,74 +2,92 @@
 {% import 'bootstrap4/form.html' as wtf %}
 
 {% block content %}
-  <div id="log_bod">
-    <main class="filling">
-      <div class="form-box login">
-        <form action="#">
-          <h2>Login</h2>
-
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="Username" required />
-            <label>Username<Address></Address></label>
+<div id="log_bod">
+  <main class="filling">
+    <div class="form-box login">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %} <!-- check if there are any messages -->
+      <div class="container-fluid">
+        <div class="row mt-3 mb-3">
+          <div class="col-md-12">
+            {% for message in messages %} <!--loop through the messages-->
+            <div class="alert alert-info">{{ message }}</div> <!--display as alert-->
+            {% endfor %}
           </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="Password" required />
-            <label>Password</label>
-          </div>
-          <div class="remember-forgot">
-            <label><input type="checkbox" />Remember me</label>
-            <a href="#"><b>Forgot Password?</b></a>
-          </div>
-          <button type="submit" class="btn">Login</button>
-          <div class="login-register">
-            <p>
-              Not a member yet?<a href="#" class="register-link"><b>Register</b></a>
-            </p>
-          </div>
-        </form>
+        </div>
       </div>
+      {% endif %}
+      {% endwith %}
 
-      <!-- Registeration html -->
-      <div class="form-box register">
-        <form action="#">
-          <h2>Registeration</h2>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-            <input type="" required />
-            <label>Username<Address></Address></label>
-          </div>
+      {% if heading|lower =='login' %}
+      <h2>Login</h2>
 
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="Username" required />
-            <label>Email<Address></Address></label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="Password" required />
-            <label>Password</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="Password" required />
-            <label>Confirm Password</label>
-          </div>
-          <div class="remember-forgot">
-            <label><input type="checkbox" required />I agree to terms and conditions</label>
-          </div>
-          <button type="submit" class="btn">Register</button>
-          <div class="login-register">
-            <p>
-              Already a member?<a href="#" class="login-link"><b>Login</b></a>
-            </p>
-          </div>
-        </form>
-      </div>
-    </main>
-    <script src="../static/java/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  </div>
+      <form action="{{url_for('auth.login')}}" , method="POST">
+
+        {{ form.csrf_token }}
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <div>{{ form.user_name.label() }} {{ form.user_name(id="pluto2") }}</div>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <div>{{ form.password.label() }} {{ form.password(id="pluto2") }}</div>
+        </div>
+        <div class="remember-forgot">
+          <!-- <label><input type="checkbox" />Remember me</label> -->
+          <!-- <a href="#"><b>Forgot Password?</b></a> -->
+        </div>
+        {{ form.submit(class="btn") }}
+        <div class="login-register">
+          <p>
+            Not a member yet?<a href="#" class="register-link"><b>Register</b></a>
+          </p>
+        </div>
+      </form>
+    </div>
+    {% endif %}
+
+    {% if heading|lower =='register' %}
+    <!-- Registeration html -->
+    <div class="form-box register">
+      
+        
+        <h2>Registeration</h2>
+        <form action="{{url_for('auth.register')}}" method="POST"></form>
+        {{ form.csrf_token }}
+
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+          <div>{{ form.user_name.label() }} {{ form.user_name(id="pluto2") }}</div>
+        </div>
+
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <div>{{ form.user_name.label() }} {{ form.user_name(id="pluto2") }}</div>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <div>{{ form.password.label() }} {{ form.password(id="pluto2") }}</div>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <div>{{ form.confirm.label() }} {{ form.confirm(id="pluto2") }}</div>
+        </div>
+        <div class="remember-forgot">
+          <!-- <label><input type="checkbox" required />I agree to terms and conditions</label> -->
+        </div>
+        {{ form.submit(class="btn") }}
+        <div class="login-register">
+          <p>
+            Already a member?<a href="{{ url_for('auth.login') }}" class="login-link"><b>Login</b></a>
+          </p>
+        </div>
+      </form>
+    </div>
+    {% endif %}
+  </main>
+  <script src="../static/java/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
 {% endblock %}

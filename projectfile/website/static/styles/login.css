@@ -64,7 +64,7 @@
 
 #log_bod .input-box label {
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
@@ -84,7 +84,8 @@
     border: none;
     font-weight: 50;
     outline: none;
-    padding: 0 1px 0;
+    padding: 17px 1px 0;
+    
 }
 
 #log_bod .input-box .icon {
@@ -195,13 +196,30 @@
     transform: translateX(0);
 }
 
+/*Overwriting the flask form defaults*/
+#pluto2 {
+    background-color: rgba(0,0,0,0) !important;
+    color:rgb(151, 9, 139) !important;
+}
 
+::placeholder {
+    color: rgba(255, 0, 255, 0.6) !important;
+    font-size: small;
+  }
 
-
-
-
-
-
+#plutoSubmit {
+        height: 45px;
+        width: 100%;
+        border: none;
+        background: rgb(184, 133, 197);
+        outline: none;
+        cursor: pointer;
+        color: black;
+        font-size: 1em;
+        font-weight: 500;
+        margin-top: 40px;
+        /* padding: -20%; */
+}
 
 
 
