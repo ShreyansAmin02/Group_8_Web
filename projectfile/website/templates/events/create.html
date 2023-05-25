@@ -7,11 +7,43 @@
     <div class="create-event-container bg-dark-subtle py-5">
       <h1 class="fs-1 fw-bold text-uppercase lh-base py-5">
         Create
+        <br />
         <span class="sub-text">Your Event</span>
       </h1>
       <div>
-        <form action="" method="" class="create-event-form bg-dark row row-col">
-          <div class="container row row-col">{{ wtf.render_form(form) }}</div>
+        <!-- boostrap grid usage -->
+        <!-- bootstrap form component customised -->
+        <form action="#" method="post" enctype="multipart/form-data" class="create-event-form bg-dark row row-col">
+          {{ form.csrf_token }}
+          <div class="form-group col-md-6">{{ form.title.label }}
+            {{ form.title() }}</div>
+          <div class="form-group col-md-6">{{ form.artistName.label }}
+            {{ form.artistName() }}</div>
+          <div class="form-group col-md-6">{{ form.style.label }}
+            {{ form.style() }}</div>
+          <div class="form-group col-md-6">{{ form.address.label }}
+            {{ form.address() }}</div>
+          <div class="form-group col-12">{{ form.date.label }}
+            {{ form.date(class = 'form-control') }}</div>
+          <div class="form-group col-md-6">{{ form.startTime.label }}
+            {{ form.startTime(class = 'form-control') }}</div>
+          <div class="form-group col-md-6">{{ form.endTime.label }}
+            {{ form.endTime(class = 'form-control') }}</div>
+          <!-- accept images only -->
+          <div class="form-group col-12">{{ form.image.label }}
+            {{ form.image(class = 'form-control') }}</div>
+          <div class="form-group col-12">
+            <label for="event-description">{{ form.description.label }}</label>
+            {{ form.description() }}
+          </div>
+          <div class="form-group col-md-6">{{ form.tickets.label }}
+            {{ form.tickets() }}</div>
+          <div class="form-group col-md-6">{{ form.price.label }}
+            {{ form.price() }}</div>
+          <div class="form-group col-12">{{ form.contactDetails.label }}
+            {{ form.contactDetails() }}</div>
+          <!-- prevent page reload -->
+          {{ form.submit(class = 'create-event-btn') }}
         </form>
       </div>
     </div>
