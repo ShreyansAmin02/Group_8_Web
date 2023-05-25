@@ -230,9 +230,10 @@ form {
 
 label {
     display: block;
+    /*padding-bottom: 20px;*/
     margin-bottom: 5px;
     font-weight: bold;
-    color: #ff96f1;
+    color: purple;
 }
 
 input[type="text"],

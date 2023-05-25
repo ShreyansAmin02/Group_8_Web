@@ -1,3 +1,8 @@
+/* ----------------------------------Login and register Css----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
 #log_bod {
     display: flex;
     justify-content: center;
@@ -24,7 +29,7 @@
 #log_bod main.filling {
     position: relative;
     width: 400px;
-    height: 470px;
+    height: 625px;
     background-color: #fff5;
     overflow: hidden;
     box-shadow: 0 6.4px 12.8px rgb(0, 0, 0);
@@ -94,6 +99,7 @@
     font-size: 1.2em;
     color: black;
     line-height: 50px;
+    right: -20px;
 }
 
 

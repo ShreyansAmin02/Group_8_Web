@@ -30,7 +30,7 @@ def register():
         db.session.commit()
         flash('successfully registered user. Please login.')
         return redirect(url_for('auth.login'))
-    return render_template('loginn.html', form=form, heading='Register')
+    return render_template('register.html', form=form, heading='Register')
 
 
 

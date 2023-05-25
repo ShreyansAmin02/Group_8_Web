@@ -18,9 +18,7 @@
       </div>
       {% endif %}
       {% endwith %}
-
-      {% if heading|lower =='login' %}
-      <h2>Login</h2>
+      <h2>{{heading}}</h2>
 
       <form action="{{url_for('auth.login')}}" , method="POST">
 
@@ -40,51 +38,11 @@
         {{ form.submit(class="btn") }}
         <div class="login-register">
           <p>
-            Not a member yet?<a href="#" class="register-link"><b>Register</b></a>
+            Not a member yet?<a href="{{ url_for('auth.register') }}" class="register-link"><b>Register</b></a>
           </p>
         </div>
       </form>
     </div>
-    {% endif %}
-
-    {% if heading|lower =='register' %}
-    <!-- Registeration html -->
-    <div class="form-box register">
-      
-        
-        <h2>Registeration</h2>
-        <form action="{{url_for('auth.register')}}" method="POST"></form>
-        {{ form.csrf_token }}
-
-        <div class="input-box">
-          <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-          <div>{{ form.user_name.label() }} {{ form.user_name(id="pluto2") }}</div>
-        </div>
-
-        <div class="input-box">
-          <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <div>{{ form.user_name.label() }} {{ form.user_name(id="pluto2") }}</div>
-        </div>
-        <div class="input-box">
-          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <div>{{ form.password.label() }} {{ form.password(id="pluto2") }}</div>
-        </div>
-        <div class="input-box">
-          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <div>{{ form.confirm.label() }} {{ form.confirm(id="pluto2") }}</div>
-        </div>
-        <div class="remember-forgot">
-          <!-- <label><input type="checkbox" required />I agree to terms and conditions</label> -->
-        </div>
-        {{ form.submit(class="btn") }}
-        <div class="login-register">
-          <p>
-            Already a member?<a href="{{ url_for('auth.login') }}" class="login-link"><b>Login</b></a>
-          </p>
-        </div>
-      </form>
-    </div>
-    {% endif %}
   </main>
   <script src="../static/java/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
