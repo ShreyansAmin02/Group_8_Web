@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
 
     # relation to call user.comments and comment.created_by
     comments = db.relationship('Comment', backref='user')
+    comments = db.relationship('Event', backref='user')
 
 
 class Event(db.Model):
@@ -31,6 +32,7 @@ class Event(db.Model):
     tickets = db.Column(db.Integer)
     price = db.Column(db.Integer)
     contactDetails = db.Column(db.String(200))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     # ... Create the Comments db.relationship
     # relation to call event.comments and comment.event
     comments = db.relationship('Comment', backref='event')
