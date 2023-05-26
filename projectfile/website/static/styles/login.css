@@ -90,7 +90,7 @@
     font-weight: 50;
     outline: none;
     padding: 17px 1px 0;
-    
+
 }
 
 #log_bod .input-box .icon {
@@ -203,28 +203,28 @@
 }
 
 /*Overwriting the flask form defaults*/
-#pluto2 {
-    background-color: rgba(0,0,0,0) !important;
-    color:rgb(151, 9, 139) !important;
+#log_bod #pluto2 {
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: rgb(151, 9, 139) !important;
 }
 
-::placeholder {
+#log_bod ::placeholder {
     color: rgba(255, 0, 255, 0.6) !important;
     font-size: small;
-  }
+}
 
-#plutoSubmit {
-        height: 45px;
-        width: 100%;
-        border: none;
-        background: rgb(184, 133, 197);
-        outline: none;
-        cursor: pointer;
-        color: black;
-        font-size: 1em;
-        font-weight: 500;
-        margin-top: 40px;
-        /* padding: -20%; */
+#log_bod #plutoSubmit {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background: rgb(184, 133, 197);
+    outline: none;
+    cursor: pointer;
+    color: black;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 40px;
+    /* padding: -20%; */
 }
 
 
