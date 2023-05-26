@@ -27,7 +27,7 @@ def show(id):  # not done yet
 
 
 @eventsbp.route("/create", methods=['GET', 'POST'])
-# @login_required (# uncomment once login function is complete)
+@login_required
 def create():
     print('Method  type: ', request.method)
     eventForm = EventForm()
@@ -56,7 +56,7 @@ def check_upload_file(form):
 
 
 @eventsbp.route('<id>/comment', methods=['GET', 'POST'])
-# @login_required (# uncomment once login function is complete)
+@login_required
 def comment(id):
     event_obj = Event.query.filter_by(id=id).first()
     # here the form is created form = CommentForm()
