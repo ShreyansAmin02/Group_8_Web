@@ -56,7 +56,7 @@ def check_upload_file(form):
 
 
 @eventsbp.route('<id>/comment', methods=['GET', 'POST'])
-@login_required
+# @login_required
 def comment(id):
     event_obj = Event.query.filter_by(id=id).first()
     # here the form is created form = CommentForm()
