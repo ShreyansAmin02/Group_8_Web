@@ -27,7 +27,7 @@ def show(id):  # not done yet
 
 
 @eventsbp.route("/create", methods=['GET', 'POST'])
-# @login_required (# uncomment once login function is complete)
+@login_required
 def create():
     print('Method  type: ', request.method)
     eventForm = EventForm()
@@ -35,7 +35,7 @@ def create():
         db_file_path = check_upload_file(eventForm)
         event = Event(eventTitle=eventForm.title.data, style=eventForm.style.data, artistName=eventForm.artistName.data, address=eventForm.address.data, date=eventForm.date.data, image=db_file_path, startTime=eventForm.startTime.data, endTime=eventForm.endTime.data,
                       description=eventForm.description.data, tickets=eventForm.tickets.data,
-                      price=eventForm.price.data, contactDetails=eventForm.contactDetails.data)
+                      price=eventForm.price.data, contactDetails=eventForm.contactDetails.data, user=current_user)
         db.session.add(event)
         db.session.commit()
         return redirect(url_for('events.create'))
@@ -56,7 +56,7 @@ def check_upload_file(form):
 
 
 @eventsbp.route('<id>/comment', methods=['GET', 'POST'])
-# @login_required (# uncomment once login function is complete)
+# @login_required
 def comment(id):
     event_obj = Event.query.filter_by(id=id).first()
     # here the form is created form = CommentForm()
