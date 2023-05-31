@@ -12,8 +12,12 @@
       <div>
         <!-- boostrap grid usage -->
         <!-- bootstrap form component customised -->
+        <!--        
         <form action="#" method="post" enctype="multipart/form-data" class="create-event-form bg-dark row row-col">
+                  -->
+        <form action="#" method="post" enctype="multipart/form-data" class="bg-dark row row-col">
           {{ form.csrf_token }}
+          {{ form.hidden_tag() }}
           <div class="form-group col-md-6">{{ form.title.label }}
             {{ form.title() }}</div>
           <div class="form-group col-md-6">{{ form.artistName.label }}
@@ -42,7 +46,7 @@
           <div class="form-group col-12">{{ form.contactDetails.label }}
             {{ form.contactDetails() }}</div>
           <!-- prevent page reload -->
-          {{ form.submit(class = 'create-event-btn') }}
+          {{ form.submit(class = 'btn btn-primary btn-block col-auto create-event-btn') }}
         </form>
       </div>
     </div>
