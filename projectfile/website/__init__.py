@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap4
+from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
@@ -10,13 +10,13 @@ app = Flask(__name__)
 def create_app():
 
     # we use this utility module to display forms quickly
-    bootstrap = Bootstrap4(app)
+    bootstrap = Bootstrap(app)
 
     # A secret key for the session object
     app.secret_key = 'somerandomvalue'
 
     # Configue and initialise DB
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///eventDatabase.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///eventDatabase.sqlite-test'
     db.init_app(app)
     from . import views, auth, events
 
