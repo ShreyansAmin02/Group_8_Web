@@ -31,6 +31,7 @@ class Event(db.Model):
     description = db.Column(db.String(400))
     tickets = db.Column(db.Integer)
     price = db.Column(db.Integer)
+    status = db.Column(db.String(30)) # need to record either Open, Inactive, Cancelled, Sold Out
     contactDetails = db.Column(db.String(200))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     # ... Create the Comments db.relationship

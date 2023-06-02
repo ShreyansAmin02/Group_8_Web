@@ -18,8 +18,10 @@ def show(id):  # not done yet
     try:
         event = Event.query.filter_by(id=id).first()
         cmtForm = CommentForm()
+        
         if id == None:
             id = "events/create"
+        
         return render_template("events/details.html", event=event, form=cmtForm)
     except:
         message = "Event was not found"
@@ -35,7 +37,7 @@ def create():
         db_file_path = check_upload_file(eventForm)
         event = Event(eventTitle=eventForm.title.data, style=eventForm.style.data, artistName=eventForm.artistName.data, address=eventForm.address.data, date=eventForm.date.data, image=db_file_path, startTime=eventForm.startTime.data, endTime=eventForm.endTime.data,
                       description=eventForm.description.data, tickets=eventForm.tickets.data,
-                      price=eventForm.price.data, contactDetails=eventForm.contactDetails.data, user=current_user)
+                      price=eventForm.price.data, status="Open", contactDetails=eventForm.contactDetails.data, user=current_user)
         db.session.add(event)
         db.session.commit()
         return redirect(url_for('events.create'))
