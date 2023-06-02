@@ -38,8 +38,6 @@
       <!-- boostrap grid usage -->
       <div class="card-container row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 gy-4 gx-5">
         <!-- bootstrap card components customised -->
-        
-        {% for event in events %}
         <div class="col">
           <div class="card">
             <div class="position-relative">
@@ -48,20 +46,173 @@
                 Open
                 <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success p-1"><span class="visually-hidden">open</span></span>
               </button>
-              <img src={{event.image}} class="object-fit-cover card-img" alt="karnival event" title="karnival event" />
+              <img src="./img/karnival.png" class="object-fit-cover card-img" alt="karnival event" title="karnival event" />
             </div>
 
             <div class="card-body">
               <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
-                <h5 class="card-title">{{event.eventTitle}}</h5>
-                <h6 class="card-date">{{event.date}}</h6>
+                <h5 class="card-title">Karnival</h5>
+                <h6 class="card-date">23/12/2023</h6>
               </div>
-              <p class="card-text lh-base fs-6 mb-4">{{event.description}}</p>
-              <a href="{{url_for('events.show', id=event.id)}}" class="btn btn-primary">Find out more</a>
+              <p class="card-text lh-base fs-6 mb-4">Karnival, the ultimate HardStyle event.</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
             </div>
           </div>
         </div>
-        {% endfor %}
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-danger position-absolute end-75 rounded-pill" disabled>
+                Sold Out
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">sold out</span></span>
+              </button>
+              <img src="./img/ultra-miami.jpeg" class="object-fit-cover" alt="ultra miami event" title="ultra miami event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Ultra Miami</h5>
+                <h6 class="card-date">08/11/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">Ultra Miami, the high-energy HardStyle event, featuring an explosive lineup.</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-success position-absolute end-75 rounded-pill" disabled>
+                Open
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success p-1"><span class="visually-hidden">open</span></span>
+              </button>
+              <img src="./img/tomorrowland.jpeg" class="object-fit-cover" alt="tomorrowland event" title="tomorrowland event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Tomorrow</h5>
+                <h6 class="card-date">05/11/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">Experience a whole new level of raves, with the immersive expereience of sound, light and energy that you will never forget.</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-success position-absolute end-75 rounded-pill" disabled>
+                Open
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success p-1"><span class="visually-hidden">open</span></span>
+              </button>
+              <img src="./img/timeless.webp" class="object-fit-cover" alt="timeless event" title="timeless event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Timeless</h5>
+                <h6 class="card-date">18/10/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">Where timeless creates united generations of ravers!</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-success position-absolute end-75 rounded-pill" disabled>
+                Open
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success p-1"><span class="visually-hidden">open</span></span>
+              </button>
+              <img src="./img/syndicate.jpeg" class="object-fit-cover" alt="syndicate event" title="syndicate event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Syndicate</h5>
+                <h6 class="card-date">12/08/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">Prepared to be transported to another dimension at Syndicate, taking you on a journey through the stars!</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-warning position-absolute end-75 rounded-pill" disabled>
+                Cancelled
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-warning p-1"><span class="visually-hidden">cancelled</span></span>
+              </button>
+              <img src="./img/sunglow.jpeg" class="object-fit-cover" alt="sunglow event" title="sunglow event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Sunglow</h5>
+                <h6 class="card-date">30/06/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">Get ready to be blown away by Sunglow, the HardStyle event that explodes with energy and excitement from the moment you step through the gates.</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-secondary position-absolute end-75 rounded-pill" disabled>
+                Inactive
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-secondary p-1"><span class="visually-hidden">inactive</span></span>
+              </button>
+              <img src="./img/reverze.jpeg" class="object-fit-cover" alt="reverze event" title="reverze event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Reverze</h5>
+                <h6 class="card-date">23/04/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">Reverse the rare and unforgettable event, with some of the biggest names in the industry come to one.</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="position-relative">
+              <!-- bootstrap alert button customised to serve as event status indicator -->
+              <button type="button" class="btn btn-secondary position-absolute end-75 rounded-pill" disabled>
+                Inactive
+                <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-secondary p-1"><span class="visually-hidden">inactive</span></span>
+              </button>
+              <img src="./img/qlimax.jpeg" class="object-fit-cover" alt="qlimax event" title="qlimax event" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-heading d-flex flex-row justify-content-between align-items-center mb-2">
+                <h5 class="card-title">Qlimax</h5>
+                <h6 class="card-date">10/01/2023</h6>
+              </div>
+              <p class="card-text lh-base fs-6 mb-4">THE TIME OF YOUR LIFE!!!!</p>
+              <a href="event-details.html" class="btn btn-primary">Find out more</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
