@@ -75,6 +75,6 @@ class CommentForm(FlaskForm):
 
 
 class BookingForm(FlaskForm):
-    type = TextAreaField()
-    amount = IntegerField()
+    type = TextAreaField(validators=[InputRequired()])
+    amount = IntegerField(validators=[InputRequired()])
     submit = SubmitField('Book')
