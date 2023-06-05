@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
 
     # relation to call user.comments and comment.created_by
     comments = db.relationship('Comment', backref='user')
-    comments = db.relationship('Event', backref='user')
+    #comments = db.relationship('Event', backref='user')
 
 
 class Event(db.Model):

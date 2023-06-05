@@ -67,5 +67,5 @@ class RegisterForm(FlaskForm):
 
 class CommentForm(FlaskForm):
     text = TextAreaField('Comment', [InputRequired()], render_kw={
-                         "placeholder": "Leave a comment:  "})
+                         "placeholder": "Leave a comment aaaa:  "})
     submit = SubmitField('Create')

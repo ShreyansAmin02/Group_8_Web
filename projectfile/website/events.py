@@ -58,15 +58,20 @@ def check_upload_file(form):
 
 
 @eventsbp.route('<id>/comment', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def comment(id):
     event_obj = Event.query.filter_by(id=id).first()
     # here the form is created form = CommentForm()
     form = CommentForm()
     if form.validate_on_submit():
-        comment = Comment(
-            text=form.text.data,
-            event=event_obj, user=current_user)
+        
+        comment = Comment(text=form.text.data,event_id=event_obj,user_id=current_user)
+        # print(form.text.data)
         db.session.add(comment)
-        db.session.commit()
-    return redirect(url_for('event.show', id=id))
+        try:
+            db.session.commit()
+            flash("Your comment was successful!")
+        except (RuntimeError, TypeError, NameError):
+            print(Exception)
+            print('ERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR!!!!!!')
+    return redirect(url_for('events.show', id=id))

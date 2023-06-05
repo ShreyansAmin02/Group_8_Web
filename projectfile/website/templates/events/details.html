@@ -86,47 +86,40 @@
         <div class="row">
           <div class="col-md-12">
             <h3 class="mb-4 fs-3 fw-semibold">Comments</h3>
-            <form action="" method="" class="p-0">
+            <!-- <form action="" method="" class="p-0"> -->
               <div class="form-group">
                 <div>
-                  <img src="./img/anoncat.jpeg" class="mr-3 mb-2 rounded-circle" alt="Your User Image" title="Your User Image" height="64" width="64" />
+                  
+                  <!-- <img src="./img/anoncat.jpeg" class="mr-3 mb-2 rounded-circle" alt="Your User Image" title="Your User Image" height="64" width="64" /> -->
                   <h5 class="mt-0 fs-5 fw-medium mb-4">
-                    Anonymous Cat
+                    <!-- Anonymous Cat -->
+                    
                     <small class="small-text">(Log in to comment as yourself!)</small>
                   </h5>
                 </div>
-                <label for="comment" class="fw-normal">Leave a Comment:</label>
-                <textarea class="form-control bg-gray-600" id="comment" rows="3"></textarea>
+                {{wtf.render_form(form,"/events/{0}/comment".format(event.id))}}
+                {% for cmt in event.comments %}
+              
+                <!-- <label for="comment" class="fw-normal">Leave a Comment:</label> -->
+                <!-- <textarea class="form-control bg-gray-600" id="comment" rows="3"></textarea> -->
               </div>
-              <button type="submit" class="btn btn-primary">Comment</button>
-            </form>
+              {{ form.submit(class="btn") }}
+            <!-- </form> -->
             <hr />
             <div class="media bg-dark-subtle p-4 rounded">
-              <img src="./img/anonpanda.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" />
+              
+              
+              <!-- <img src="./img/anonpanda.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" /> -->
               <div class="media-body">
-                <h5 class="mt-0 fs-5 fw-medium mb-4">Anonymous Panda</h5>
-                <p class="mb-4">OMG, I can't wait for the festival! The lineup is insane, and I'm so excited to see my favorite artists perform live!</p>
-                <small class="date-text">Date Posted: 28/04/2023 10:20am</small>
+                <h5 class="mt-0 fs-5 fw-medium mb-4">{{cmt.user_id}}</h5>
+                <p class="mb-4">{{cmt.text}}</p>
+                <small class="date-text">{{cmt.getNiceTime()}}</small>
+                
               </div>
+              {% endfor %} 
+              
             </div>
             <hr />
-            <div class="media bg-dark-subtle p-4 rounded">
-              <img src="./img/anonlion.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" />
-              <div class="media-body">
-                <h5 class="mt-0 fs-5 fw-medium mb-4">Anonymous Lion</h5>
-                <p class="mb-4">This is going to be the best weekend ever! I've been counting down the days to the festival, and I can't wait to dance my heart out with all the other fans.</p>
-                <small class="date-text">Date Posted: 27/04/2023 8:15pm</small>
-              </div>
-            </div>
-            <hr />
-            <div class="media bg-dark-subtle p-4 rounded">
-              <img src="./img/anonmonkey.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" />
-              <div class="media-body">
-                <h5 class="mt-0 fs-5 fw-medium mb-4">Anonymous Monkey</h5>
-                <p class="mb-4">I've been dreaming about this festival for months, and it's finally happening! I'm going to be in the front row for all my favorite artists, and I know I'm going to have the time of my life.</p>
-                <small class="date-text">Date Posted: 26/04/2023 3:43pm</small>
-              </div>
-            </div>
           </div>
         </div>
       </div>
