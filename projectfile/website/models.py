@@ -64,3 +64,5 @@ class Booking(db.Model):
     amount = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
+    Event.tickets = Event.tickets - amount
+    
