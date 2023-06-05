@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% import 'bootstrap4/form.html' as wtf %}
+
+{% block content %}
+<main>
+    <div class="booking-history-container bg-dark-subtle py-5">
+      <h1 class="fs-1 fw-bold text-uppercase lh-base pt-5 pb-4">
+        Your
+        <br />
+        <span class="sub-text">Booked Events</span>
+      </h1>
+      <!-- bootstrap grid usage -->
+      <div class="row row-cols-1 g-4">
+        <!-- boostrap horizontal card component customised -->
+        <div class="col px-0">
+            <div class="booking-card card mb-3 w-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{event.image}}" class="img-fluid" alt="Event Image" title="kEvent Image"/>
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="card-body h-100 d-flex flex-column justify-content-between"
+                  >
+                    <h5 class="card-title mb-4 fs-2 fw-medium">{{ event.eventTitle }}</h5>
+                    <p class="card-text">x{{booking.amount}} {{booking.type}}</p>
+                    <p class="card-text mb-4">
+                      Booked for {{event.date}} {{event.startTime}} AEDT
+                    </p>
+                    <p class="card-text d-flex justify-content-between">
+                      <small class="text-body-secondary"
+                        >More Detais: <a href="{{url_for('events.show', id=event.id)}}">Click here</a></small
+                      >
+                      <small class="text-body-secondary"
+                        >Order ID: {{booking.id}}{{booking.user_id}}{{booking.event_id}}</small
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+{% endblock %}
