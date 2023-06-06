@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template, request, session, redirect, url_for, flash
-from .models import Comment, Event
-from .forms import EventForm, CommentForm
+from .models import Comment, Event, Booking
+from .forms import EventForm, CommentForm, BookingForm
 import os
 from werkzeug.utils import secure_filename
 from . import db
 from flask_login import login_required, current_user
+import details.html
 
 # handles different destiantion pages
 
@@ -75,3 +76,17 @@ def comment(id):
             print(Exception)
             print('ERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR!!!!!!')
     return redirect(url_for('events.show', id=id))
+
+
+@eventsbp.route('<id>/booking', methods=['GET', 'POST'])
+@login_required
+def booking(id):
+    event_obj = Event.query.filter_by(id=id).first()
+    bookform = BookingForm()
+    
+    if bookform.validate_on_submit():
+        booking = Booking(type=bookform.type.data, amount=bookform.amount.data,event_id=event_obj,user_id=current_user)
+        db.session.add(booking)
+        db.session.commit()
+        flash("Successful Booking")
+    return redirect(url_for('events.show' id=id))

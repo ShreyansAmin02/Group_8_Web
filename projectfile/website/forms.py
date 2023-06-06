@@ -67,5 +67,14 @@ class RegisterForm(FlaskForm):
 
 class CommentForm(FlaskForm):
     text = TextAreaField('Comment', [InputRequired()], render_kw={
-                         "placeholder": "Leave a comment aaaa:  "})
+                         "placeholder": "Leave a comment:  "})
     submit = SubmitField('Create')
+
+
+# Event Booking
+
+
+class BookingForm(FlaskForm):
+    type = TextAreaField(validators=[InputRequired()])
+    amount = IntegerField(validators=[InputRequired()])
+    submit = SubmitField('Book')

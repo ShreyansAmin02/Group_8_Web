@@ -42,19 +42,19 @@
               <div class="form-group">
                 <label for="ticketType" class="mb-3">Book Ticket:</label>
                 <select class="form-control mb-3" id="ticketType" required>
-                  <option>General Admission ${{event.price}}</option>
-                  <option>VIP $150</option>
-                  <option disabled>Backstage Pass $300 SOLD OUT</option>
+                  <option value ="General" {{ticket}}>General Admission ${{event.price}}</option>
+                  <option value ="VIP" {{ticket}}>VIP $150</option>
+                  <option value ="Backstage" {{ticket}}>Backstage Pass $300</option>
                 </select>
                 <label for="ticketAmount" class="mb-3">Quantity:</label>
                 <select class="form-control mb-3" id="ticketAmount" required>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                  <option value ="1" {{amount}}>1</option>
+                  <option value ="2" {{amount}}>2</option>
+                  <option value ="3" {{amount}}>3</option>
+                  <option value ="4" {{amount}}>4</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary">Book Now</button>
+              {{ bookform.submit(class = 'booking-btn') }}
             </form>
           </div>
         </div>
