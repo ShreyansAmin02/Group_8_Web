@@ -7,15 +7,15 @@
     <div class="create-event-container bg-dark-subtle py-5">
       <h1 class="fs-1 fw-bold text-uppercase lh-base py-5">
         Create
-        
         <span class="sub-text">Your Event</span>
       </h1>
       <div>
         <!-- boostrap grid usage -->
         <!-- bootstrap form component customised -->
-        <!-- <form action="#" method="post" enctype="multipart/form-data" class="create-event-form bg-dark row row-col"> -->
-
-        <form action="#" method="post" enctype="multipart/form-data" class="bg-dark row row-col"></form>
+        <!--        
+        <form action="#" method="post" enctype="multipart/form-data" class="create-event-form bg-dark row row-col">
+                  -->
+        <form action="#" method="post" enctype="multipart/form-data" class="bg-dark row row-col">
           {{ form.csrf_token }}
           {{ form.hidden_tag() }}
           <div class="form-group col-md-6">{{ form.title.label }}

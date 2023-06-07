@@ -5,7 +5,7 @@ import os
 from werkzeug.utils import secure_filename
 from . import db
 from flask_login import login_required, current_user
-import details.html
+# import details.html
 
 # handles different destiantion pages
 
