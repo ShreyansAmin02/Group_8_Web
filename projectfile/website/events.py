@@ -89,4 +89,4 @@ def booking(id):
         db.session.add(booking)
         db.session.commit()
         flash("Successful Booking")
-    return redirect(url_for('events.show' id=id))
+    return redirect(url_for('events.show', id=id))
