@@ -31,6 +31,7 @@ class Event(db.Model):
     description = db.Column(db.String(400))
     tickets = db.Column(db.Integer)
     price = db.Column(db.Integer)
+    status = db.Column(db.String(30)) # need to record either Open, Inactive, Cancelled, Sold Out
     contactDetails = db.Column(db.String(200))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     # ... Create the Comments db.relationship
@@ -55,3 +56,13 @@ class Comment(db.Model):
 
     def __repr__(self):
         return "<Comment: {}>".format(self.text)
+    
+class Booking(db.Model):
+    __tablename__ = 'bookings'
+    id = db.Column(db.Integer, primary_key=True)
+    type = db.Column(db.String(80))
+    amount = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
+    Event.tickets = Event.tickets - amount
+    

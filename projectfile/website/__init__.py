@@ -16,7 +16,7 @@ def create_app():
     app.secret_key = 'somerandomvalue'
 
     # Configue and initialise DB
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///eventDatabase.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///eventDatabase.sqlite-test'
     db.init_app(app)
     from . import views, auth, events
 
