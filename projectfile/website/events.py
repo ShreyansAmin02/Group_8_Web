@@ -19,10 +19,10 @@ def show(id):  # not done yet
     try:
         event = Event.query.filter_by(id=id).first()
         cmtForm = CommentForm()
-        
+
         if id == None:
             id = "events/create"
-        
+
         return render_template("events/details.html", event=event, form=cmtForm)
     except:
         message = "Event was not found"
@@ -83,9 +83,10 @@ def comment(id):
 def booking(id):
     event_obj = Event.query.filter_by(id=id).first()
     bookform = BookingForm()
-    
+
     if bookform.validate_on_submit():
-        booking = Booking(type=bookform.type.data, amount=bookform.amount.data,event_id=event_obj,user_id=current_user)
+        booking = Booking(type=bookform.type.data, amount=bookform.amount.data,
+                          event_id=event_obj, user_id=current_user)
         db.session.add(booking)
         db.session.commit()
         flash("Successful Booking")
