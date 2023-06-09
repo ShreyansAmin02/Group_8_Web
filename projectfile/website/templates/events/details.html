@@ -3,81 +3,71 @@
 {% import 'bootstrap4/form.html' as wtf %}
 
 {% block content %}
-  <main>
-    <div class="event-details-page-container g-4 bg-dark-subtle py-5">
-      <h1 class="fs-1 fw-bold text-uppercase lh-base pt-5 pb-4">
-        About
-        <br />
-        <span class="sub-text">The Event</span>
-      </h1>
+<main>
+  <div class="event-details-page-container g-4 bg-dark-subtle py-5">
+    <h1 class="fs-1 fw-bold text-uppercase lh-base pt-5 pb-4">
+      About
+      <br />
+      <span class="sub-text">The Event</span>
+    </h1>
 
-      <div class="event-details-container bg-dark text-white py-5 px-4">
-        <!-- bootstrap grid usage -->
-        <div class="row">
-          <div class="col-xl-6 col-lg-12 mb-4 justify-content-evenly">
-            <img src={{event.image}} alt="Event Image" title="Event Image" class="img-fluid w-100 mb-3 rounded object-fit-fill object-fit-top" />
-          </div>
-
-          <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-evenly lh-lg mb-4">
-            <h2 class="fs-1 fw-bold">{{ event.eventTitle }}</h2>
-            <p class="mb-3">
-              {{event.description}}
-            </p>
-            <p class="mb-3">
-              <span class="fw-semibold">Artists Performing:</span> {{ event.artistName }}
-            </p>
-            <p class="mb-3">
-              <span class="fw-semibold">Date:</span> {{ event.date.strftime('%d-%m-%Y') }}
-            </p>
-            <p class="mb-3">
-              <span class="fw-semibold">Duration:</span> {{event.startTime.strftime('%H:%M')}} to {{event.endTime.strftime('%H:%M')}}
-            </p>
-            <p class="mb-3">
-              <span class="fw-semibold">Price:</span> Starting at ${{ event.price }}
-            </p>
-            <p class="mb-3">
-              <span class="fw-semibold">Location:</span> {{event.address}}
-            </p>
-            <form action="" method="" class="p-0">
-              <div class="form-group">
-                <label for="ticketType" class="mb-3">Book Ticket:</label>
-                <select class="form-control mb-3" id="ticketType" required>
-                  <option value ="General" {{ticket}}>General Admission ${{event.price}}</option>
-                  <option value ="VIP" {{ticket}}>VIP $150</option>
-                  <option value ="Backstage" {{ticket}}>Backstage Pass $300</option>
-                </select>
-                <label for="ticketAmount" class="mb-3">Quantity:</label>
-                <select class="form-control mb-3" id="ticketAmount" required>
-                  <option value ="1" {{amount}}>1</option>
-                  <option value ="2" {{amount}}>2</option>
-                  <option value ="3" {{amount}}>3</option>
-                  <option value ="4" {{amount}}>4</option>
-                </select>
-              </div>
-              {{ bookform.submit(class = 'booking-btn') }}
-            </form>
-          </div>
+    <div class="event-details-container bg-dark text-white py-5 px-4">
+      <!-- bootstrap grid usage -->
+      <div class="row">
+        <div class="col-xl-6 col-lg-12 mb-4 justify-content-evenly">
+          <img src="{{ event.image }}" alt="Event Image" title="Event Image" class="img-fluid w-100 mb-3 rounded object-fit-fill object-fit-top" />
         </div>
 
-        <hr />
+        <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-evenly lh-lg mb-4">
+          <h2 class="fs-1 fw-bold">{{ event.eventTitle }}</h2>
+          <p class="mb-3">
+            {{ event.description }}
+          </p>
+          <p class="mb-3">
+            <span class="fw-semibold">Artists Performing:</span> {{ event.artistName }}
+          </p>
+          <p class="mb-3">
+            <span class="fw-semibold">Date:</span> {{ event.date.strftime('%d-%m-%Y') }}
+          </p>
+          <p class="mb-3">
+            <span class="fw-semibold">Duration:</span> {{ event.startTime.strftime('%H:%M') }} to {{ event.endTime.strftime('%H:%M') }}
+          </p>
+          <p class="mb-3">
+            <span class="fw-semibold">Price:</span> Starting at ${{ event.price }}
+          </p>
+          <p class="mb-3">
+            <span class="fw-semibold">Location:</span> {{ event.address }}
+          </p>
+          <form action="" method="" class="p-0">
+            <div class="form-group">
+              <label for="ticketType" class="mb-3">Book Ticket:</label>
+              <select class="form-control mb-3" id="ticketType" required>
+                <option value="General">General Admission ${{ event.price }}</option>
+                <option value="VIP">VIP $150</option>
+                <option value="Backstage">Backstage Pass $300</option>
+              </select>
+              <label for="ticketAmount" class="mb-3">Quantity:</label>
+              <select class="form-control mb-3" id="ticketAmount" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <button type="submit" class="booking-btn">Book</button>
+          </form>
+        </div>
+      </div>
 
-        <!-- bootstrap grid usage -->
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="mb-4 fs-3 fw-semibold">Refund Policy</h3>
-            <p class="lh-base">
-              Refunds will be granted only in the event of cancellation or rescheduling of the festival. If the festival is cancelled in its entirety, ticket holders will be refunded the face value of their ticket. If the festival is rescheduled, ticket holders will have the option to either use their ticket for the rescheduled date or receive a refund.
-              <br />
-              <br />
-              Refunds will not be granted for any other reason. All sales are final and non-transferable. In the event of a cancellation or rescheduling, ticket holders will be notified via the email address provided at the time of purchase.
-              <br />
-              <br />
-              We strongly recommend that all ticket holders purchase ticket insurance or consider purchasing refundable travel arrangements to protect against unforeseen circumstances. The festival is not responsible for any expenses incurred by ticket holders in connection with the festival, including but not limited to travel, lodging, or other expenses.
-              <br />
-              <br />
-              Thank you for your understanding and support of our festival. We look forward to seeing you there!
-            </p>
-          </div>
+      <hr />
+
+      <!-- bootstrap grid usage -->
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="mb-4 fs-3 fw-semibold">Refund Policy</h3>
+          <p class="lh-base">
+            Refunds will be granted only in the event of cancellation or rescheduling of the festival. If the festival is canceled or rescheduled, we will notify you of the options available for refund or transfer. Refunds may be provided on a pro-rata basis, considering the number of days remaining until the festival and the costs already incurred.
+          </p>
         </div>
 
         <hr />
@@ -111,7 +101,7 @@
               
               <!-- <img src="./img/anonpanda.jpeg" class="mr-3 mb-2 rounded-circle" alt="User Image" title="User Image" height="64" width="64" /> -->
               <div class="media-body">
-                <h5 class="mt-0 fs-5 fw-medium mb-4">{{cmt.user_id}}</h5>
+                <h5 class="mt-0 fs-5 fw-medium mb-4">{{cmt.user.name}}</h5>
                 <p class="mb-4">{{cmt.text}}</p>
                 <small class="date-text">{{cmt.getNiceTime()}}</small>
                 

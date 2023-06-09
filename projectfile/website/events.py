@@ -66,7 +66,7 @@ def comment(id):
     form = CommentForm()
     if form.validate_on_submit():
         
-        comment = Comment(text=form.text.data,event_id=event_obj,user_id=current_user)
+        comment = Comment(text=form.text.data,event=event_obj,user=current_user)
         # print(form.text.data)
         db.session.add(comment)
         try:
