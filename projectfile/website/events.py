@@ -79,19 +79,23 @@ def comment(id):
     return redirect(url_for('events.show', id=id))
 
 
-@eventsbp.route('<id>/booking', methods=['GET', 'POST'])
+@eventsbp.route('/booking', methods=['GET', 'POST'])
 @login_required
-def booking(id):
-    event_obj = Event.query.filter_by(id=id).first()
+def booking():
+    #event_obj = Event.query.filter_by(id=id).first()
     bookform = BookingForm()
 
     if bookform.validate_on_submit():
         booking = Booking(type=bookform.type.data, amount=bookform.amount.data,
-                          event_id=event_obj, user_id=current_user)
+                         user_id=current_user)
         db.session.add(booking)
         db.session.commit()
         flash("Successful Booking")
-    return redirect(url_for('events.show', id=id))
+        return redirect(url_for('events.booking'))
+    flash('Success')
+    return render_template('events/booking.html')
+
+    
 
 # not finished due to group member health concerns
 
