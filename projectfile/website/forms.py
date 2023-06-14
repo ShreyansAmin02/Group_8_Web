@@ -71,10 +71,36 @@ class CommentForm(FlaskForm):
     submit = SubmitField('Create')
 
 
-# Event Booking
-
-
 class BookingForm(FlaskForm):
     type = TextAreaField(validators=[InputRequired()])
     amount = IntegerField(validators=[InputRequired()])
     submit = SubmitField('Book')
+
+# edit
+
+
+class EditFormButton(FlaskForm):
+    submit = SubmitField('Edit Form Button')
+
+
+class EditEventForm(FlaskForm):  # form for editing the event already created
+    title = StringField('Event Title', validators=[InputRequired(), Length(
+        min=3, max=30)], render_kw={"placeholder": "Enter Event Title"})
+    artistName = StringField('Artist Name(s)', validators=[InputRequired(), Length(
+        min=3, max=30)], render_kw={"placeholder": "Enter Artist Name(s)"})
+    style = StringField('Style', validators=[InputRequired(), Length(
+        min=3, max=30)], render_kw={"placeholder": "Enter Style"})
+    address = StringField('Address', validators=[InputRequired(), Length(
+        min=3)], render_kw={"placeholder": "Enter Address"})
+    date = DateField('Date', validators=[InputRequired()])
+    startTime = TimeField('Starts at', validators=[InputRequired()])
+    endTime = TimeField('Ends at', validators=[InputRequired()])
+    description = TextAreaField('Description',
+                                validators=[InputRequired(), Length(min=3)], render_kw={"placeholder": "Enter Description:  "})
+    tickets = IntegerField('Tickets', validators=[InputRequired()], render_kw={
+        "placeholder": "Quantity of Tickets Available"})
+    price = IntegerField('Price', validators=[InputRequired()], render_kw={
+                         "placeholder": "Enter Price"})
+    contactDetails = TextAreaField('Contact Details',
+                                   validators=[InputRequired(), Length(min=3, max=100)], render_kw={"placeholder": "Enter Contact Details:  "})
+    submit = SubmitField("Save")

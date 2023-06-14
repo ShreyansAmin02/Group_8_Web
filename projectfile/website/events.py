@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, session, redirect, url_for, flash
 from .models import Comment, Event, Booking
-from .forms import EventForm, CommentForm, BookingForm
+from .forms import EventForm, CommentForm, BookingForm, EditFormButton
 import os
 from werkzeug.utils import secure_filename
 from . import db
@@ -65,8 +65,9 @@ def comment(id):
     # here the form is created form = CommentForm()
     form = CommentForm()
     if form.validate_on_submit():
-        
-        comment = Comment(text=form.text.data,event=event_obj,user=current_user)
+
+        comment = Comment(text=form.text.data,
+                          event=event_obj, user=current_user)
         # print(form.text.data)
         db.session.add(comment)
         try:
@@ -91,3 +92,18 @@ def booking(id):
         db.session.commit()
         flash("Successful Booking")
     return redirect(url_for('events.show', id=id))
+
+# not finished due to group member health concerns
+
+# @eventsbp.route('<id>/edit', methods=['GET', 'POST'])
+# @login_required
+# def edit(id):
+#     try:
+#         event = Event.query.filter_by(id=id).first()
+#         newFormButton = EditFormButton()
+#         if id == None:
+#             id = "events/create"
+#         return render_template("events/edit.html", event=event)
+#     except:
+#         message = "Event was not found"
+#         return render_template("error.html", errorMessage=message)
